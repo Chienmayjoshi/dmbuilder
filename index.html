@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GrapesJS</title>
+    <link rel="stylesheet" href="dist/css/grapes.min.css">
+    <script src="dist/grapes.min.js"></script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="gjs" style="height:0px; overflow:hidden;">
+      <!--wrapper start-->
+        <div class="main-wrapper clearfix" >
+            <h2 class="search-for">Search For:</h2>
+            <ul class="ul-block clearfix">
+              <li class="li-block clearfix"><span class="num">1 </span><a href="#" class="link-block">keyword 1</a></li>
+              <li class="li-block clearfix"><span class="num">3 </span><a href="#" class="link-block">keyword 1</a></li>
+              <li class="li-block clearfix"><span class="num">4 </span><a href="#" class="link-block">keyword 1</a></li>
+              <li class="li-block clearfix"><span class="num">5 </span><a href="#" class="link-block">keyword 1</a></li>
+            </ul>
+            <p class="ads">ads</p>
+        </div>
+      <!--wrapper ends-->
+
+<style type="text/css">
+*{margin:0; padding:0}
+a {text-decoration:none; outline:none}
+a img {border:none}
+li {list-style:none}
+.clear {clear:both; overflow:hidden; line-height:0; font-size:0; height:0}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear: both;height:0}
+* html .clearfix{zoom:1}
+*:first-child+html .clearfix{zoom:1}
+a{text-decoration:none}
+input{outline:none}
+html{height: 100%}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body {background: #dbf0b8 url(bg.jpg) no-repeat fixed bottom right;font-family: Arial,Helvetica,sans-serif;background-size:cover;-webkit-text-size-adjust:100%;}
+
+
+.main-wrapper{width: 442px; margin:125px auto 30px; padding: 14px 16px 14px; background: rgba(244, 235, 230, 0.7);}
+.main-wrapper .li-block{list-style:none; margin-bottom:15px; font-size:23px; color:#545454; background: #fff; border: 1px solid #0097a7; position: relative; font-family: arial, sans-serif;font-weight: 700;}
+.main-wrapper .ul-block{width:100%}
+.main-wrapper .li-block .num{float:left; padding: 0; position: absolute; top: 50%; margin-top: -16px;  width: 35px; line-height: 33px; text-align: center; color: #333; font-size: 20px; height: 32px; margin-left: 0px; border-right: 1px solid #707070; font-family: Arial, sans-serif; font-weight: 400}
+.main-wrapper .link-block{display:block; padding:17px 50px 17px 50px; color:#545454; text-decoration:none; word-wrap:break-word;background:  url(arrow.png) no-repeat 96% center; position: relative;}
+.main-wrapper .li-block:hover .link-block{background: url(arrowh.png) no-repeat 96% center; color: #fff}
+.main-wrapper .li-block:hover{color: #fff; background: #0097a7; border-color: transparent;}
+.main-wrapper .li-block:hover .num{border-color: #fff; color: #fff}
+
+.search-for{font-size:15px; margin-bottom:12px; font-weight:normal; color:#333; font-family: Arial, sans-serif; width: 100%; text-align: left;}
+.ads{font-size: 15px; font-family: Arial, sans-serif; color: #333; width: 100%; text-align: right;}
+.no-results {color: #333333;font-size: 14px; margin: 20px auto;text-align: center; width: 90%;}
+
+.custom-msg { background:#fdffec; border-top: 1px solid #ffe594; border-bottom: 1px solid #ffe594; color:#000000; text-align: center; font: 11px/14px Arial, Helvetica, sans-serif; position:absolute; width:100%; top: 0}
+.custom-msg a { text-decoration: none; color:#CC0000; font-size: 11px; }
+.custom-msg a:hover { text-decoration: underline; }
+.nores {text-align:center; word-wrap:break-word; color:#000; font-size:12px; line-height:18px}
+.nores span {font-size:14px; font-weight:bold; color:#666}
+
+.top{text-align: left;padding: 6px 0px; margin: 0 auto; background: #3a79be}
+
+#optOutLink {color: #333333; padding: 20px 0;text-shadow:1px 1px 1px #fff;}
+#optOutLink a {color: #333333; text-decoration:none;text-shadow:1px 1px 1px #fff;}
+#optOutLink a:hover {text-decoration: underline}
+
+      </style>
+    </div>
+
+    <script type="text/javascript">
+      var editor = grapesjs.init({
+        showOffsets: 1,
+        noticeOnUnload: 0,
+        container: '#gjs',
+        height: '100%',
+        fromElement: true,
+        storageManager: { autoload: 0 },
+        styleManager : {
+          sectors: [{
+              name: 'General',
+              open: false,
+              buildProps: ['float', 'display', 'position', 'top', 'right', 'left', 'bottom']
+            },{
+              name: 'Dimension',
+              open: false,
+              buildProps: ['width', 'height', 'max-width', 'min-height', 'margin', 'padding'],
+            },{
+              name: 'Typography',
+              open: false,
+              buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height', 'text-shadow', 'text-align'],
+            },{
+              name: 'Decorations',
+              open: false,
+              buildProps: ['border-radius-c', 'background-color', 'border-radius', 'border', 'box-shadow', 'background'],
+            },{
+              name: 'Extra',
+              open: false,
+              buildProps: ['transition', 'perspective', 'transform'],
+            }
+          ],
+        },
+
+       /* panels: {
+        defaults  : [{
+              id      : 'main-toolbar',
+              buttons : [
+              {
+                  id        : 'btn-id',
+                  className : 'fa fa-eye',
+                  command   : 'sw-visibility',
+                  context   : 'some-random-context', // For grouping context of buttons in the same panel
+                  active    : true,
+               }
+              ],
+          }
+        ],
+      },
+      commands: {
+        defaults: [{
+            id: 'helloWorld',
+
+            run:  function(editor, senderBtn){
+              alert('Hello world!');
+              // Deactivate button
+              senderBtn.set('active', false);
+            },
+
+            stop:  function(editor, senderBtn){
+            },
+        }]
+      },*/
+
+
+      });
+
+      var panelManager = editor.Panels;
+      editor.BlockManager.add('testBlock', {
+        label: 'Block',
+        attributes: { class:'gjs-fonts gjs-f-b1' },
+        content: `<div style="padding-top:50px; padding-bottom:50px; text-align:center">Test block</div>`
+      })
+
+      var undoredopanel = panelManager.addPanel({
+       id: 'undoredopanel',
+       visible    : true,
+       buttons    : [
+       { id: "undo", className: "fa fa-undo icon-undo", command: function command(editor, sender) { sender.set("active", 0); editor.UndoManager.undo(1); }, attributes: { title: "Undo" } }
+       ,{ id: "redo", className: "fa fa-repeat icon-redo", command: function command(editor, sender) { sender.set("active", 0); editor.UndoManager.redo(1); }, attributes: { title: "Redo" } 
+      }],
+      });
+
+    </script>
+  </body>
+</html>
